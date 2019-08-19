@@ -1,15 +1,44 @@
 
-var rgb1=document.querySelector("#rgb_1");
-var rgb2=document.querySelector("#rgb_2");
-var rgb3=document.querySelector("#rgb_3");
-var rgb_value=[rgb1,rgb2,rgb3];
-for(var i=0;i<3;i++)
+var squares=document.querySelectorAll(".square");
+var colors=random_color_array(6);
+var picked_color=pick_color();
+var clicked_color;
+var text_rgba=document.querySelector('h1');
+text_rgba.textContent=picked_color;
+function pick_color() {
+    var random = Math.floor(Math.random() * colors.length);
+    return colors[random];
+}
+
+for(var j=0;j<squares.length;j++)
 {
-    var color_value=random_color();
-    rgb_value[i].textContent=Number(color_value);
-    console.log("yes");
+    squares[j].style.background=colors[j];
+
+    squares[j].addEventListener("click",function(){
+        clicked_color=this.style.background;
+        if (clicked_color == picked_color) {
+            alert("CORRECT");
+            return;
+        }
+        else
+            alert("TRY AGAIN");
+
+    })
+}
+function random_color_array(num){
+
+    var arr=[];
+    for(var i=0;i<num;i++)
+    {
+        arr.push(random_color());
+    }
+    return arr;
 }
 
 function random_color(){
-    return Math.floor(Math.random()*266);
+    var r=Math.floor(Math.random()*256);
+    var g=Math.floor(Math.random()*256);
+    var b=Math.floor(Math.random()*256);
+    return "rgb("+r+", "+g+", "+b+")";
 }
+
