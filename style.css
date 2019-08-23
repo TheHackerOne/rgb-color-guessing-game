@@ -10,7 +10,7 @@ p{
 .top{
     color: white;
     background: lightskyblue;
-    padding: 1rem;
+    padding: 0.8rem;
 }
 .display-3{
     font-weight: 600;
@@ -31,18 +31,19 @@ p{
     margin: 0 auto;
 
 }
-/* .container{
-    width: 60%;
+.bar{
+    background: greenyellow;
+    padding: 12px;
 }
-.square{
-    background: rgb( 0, 0, 0);
-    padding: 84px;
-    margin: 10px 10px 10px 10px;
-    float: left;
-    border-radius: 20px;
+.col-lg-4{
+    color: blueviolet;
+    font-size: 1.2rem;
+    font-weight: 800;
+    
 }
-.container{
-    width: 50%;
-    margin: 0 auto;
-
-} */
+.col-lg-4 button{
+    color:WHITE;
+    font-size: 1.2rem;
+    font-weight: 800;
+    
+}
